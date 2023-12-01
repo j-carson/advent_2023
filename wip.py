@@ -18,8 +18,12 @@ def solve(input_data):
 
 # Test any examples given in the problem
 
+EXAMPLES = [
+    ("first_example", 0),
+]
 
-@pytest.mark.parametrize("sample_data,sample_solution", [("first_example", 0)])
+
+@pytest.mark.parametrize("sample_data,sample_solution", EXAMPLES)
 def test_samples(sample_data, sample_solution) -> None:
     assert solve(sample_data) == sample_solution
 

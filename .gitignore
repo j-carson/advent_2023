@@ -161,3 +161,8 @@ cython_debug/
 
 # ruff
 .ruff_cache
+
+# AOC personal input files are not to be put into public repos
+# and the samples don't need to be
+input-sample.txt
+input.txt

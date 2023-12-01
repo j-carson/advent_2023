@@ -13,7 +13,6 @@ dependencies = [
     "jupyterlab-git",
     "jupyterlab-vim",
     "jupyterlab-lsp",
-    "python-lsp-server",
     "theme-darcula",
     "catppuccin-jupyterlab",
     "ipympl",
