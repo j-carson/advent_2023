@@ -1,0 +1,39 @@
+# This project isn't really intended to be installed, it just
+# installs stuff I'm using during AOC
+
+[project]
+    name = "advent_2023"
+    version = "2023.12.0"
+    description = "Solutions to Advent of Code 2023"
+    readme = "README.md"
+    license = {"file" = "LICENSE"}
+
+dependencies = [
+    "jupyterlab",
+    "jupyterlab-git",
+    "jupyterlab-vim",
+    "jupyterlab-lsp",
+    "python-lsp-server",
+    "theme-darcula",
+    "catppuccin-jupyterlab",
+    "ipympl",
+    "nodeenv",
+    "numpy",
+    "pandas",
+    "pre-commit",
+    "pytest",
+    "icecream",
+    "ruff"
+]
+
+[build-system]
+    requires = [ "setuptools", "build" ]
+    build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+    select = ["E", "F", "I", "UP", "ERA", "C", "RUF", "PLC", "PLE", "PLR", "PLW", "A",  "RET", ]
+    fix = true
+    target-version = "py311"
+
+[tool.ruff.per-file-ignores]
+    "wip.py" = [ "F401" ]
