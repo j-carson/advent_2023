@@ -19,6 +19,7 @@ dependencies = [
     "nodeenv",
     "numpy",
     "pandas",
+    "parse",
     "pre-commit",
     "pytest",
     "icecream",

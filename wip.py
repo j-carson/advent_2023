@@ -42,6 +42,6 @@ if __name__ == "__main__":
 
     #  Actual input data generally has more iterations, turn off log
     ic.disable()
-    my_input = Path("input.txt").read_text()
+    my_input = Path("input.txt").read_text().strip()
     result = solve(my_input)
     print(result)

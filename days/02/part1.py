@@ -1,6 +1,8 @@
 import sys
+from collections import defaultdict
 from pathlib import Path
 
+import parse as p
 import pytest
 from icecream import ic
 
@@ -9,26 +11,25 @@ from icecream import ic
 
 class Game:
     def __init__(self, line):
-        game, games = line.split(":")
+        self.game_id, rest_of_line = p.parse("Game {:d}: {}", line)
 
-        self.game_id = int(game.split()[-1])
-        self.games = []
-        for game in games.split(";"):
-            cubes = game.split(",")
-            game_numbers = {}
+        self.trials = []
+        for trial in rest_of_line.split(";"):
+            cubes = trial.split(",")
+            cube_counts = defaultdict(int)
             for cube in cubes:
-                count, color = cube.split()
-                game_numbers[color] = int(count)
-            self.games.append(game_numbers)
+                count, color = p.parse("{:d} {}", cube)
+                cube_counts[color] = count
+            self.trials.append(cube_counts)
 
     def possible(self, cube_counts):
         for color, count in cube_counts.items():
-            for game in self.games:
-                if color in game and game[color] > count:
+            for game in self.trials:
+                if game[color] > count:
                     ic("impossible", cube_counts, game)
                     return False
 
-        ic("possible", cube_counts, self.games)
+        ic("possible", cube_counts, self.trials)
         return True
 
 
