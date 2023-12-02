@@ -23,7 +23,7 @@ EXAMPLES = [
 ]
 
 
-@pytest.mark.parametrize("sample_data,sample_solution", EXAMPLES)
+@pytest.mark.parametrize("sample_data,sample_solution", EXAMPLES, ids=("sample",))
 def test_samples(sample_data, sample_solution) -> None:
     assert solve(sample_data) == sample_solution
 
