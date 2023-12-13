@@ -164,5 +164,5 @@ cython_debug/
 
 # AOC personal input files are not to be put into public repos
 # and the samples don't need to be
-input-sample.txt
+input-sample*txt
 input.txt
