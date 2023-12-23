@@ -18,8 +18,9 @@ def solve(input_data):
 
 # Test any examples given in the problem
 
+sample_input = Path("input-sample.txt").read_text().strip()
 EXAMPLES = [
-    ("first_example", 0),
+    (sample_input, 0),
 ]
 
 
